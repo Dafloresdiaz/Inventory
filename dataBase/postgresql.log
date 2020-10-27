@@ -17,3 +17,10 @@
 2020-10-26 22:04:41.307 CST [21267] STATEMENT:  CREATE DATABASE danielCompany.db;
 2020-10-26 22:05:43.983 CST [21407] FATAL:  role "localHost" does not exist
 2020-10-26 22:13:02.322 CST [21483] FATAL:  database "danielCompany" does not exist
+2020-10-27 01:32:28.432 CST [20919] LOG:  received fast shutdown request
+2020-10-27 01:32:28.433 CST [20919] LOG:  aborting any active transactions
+2020-10-27 01:32:28.441 CST [23219] FATAL:  terminating connection due to administrator command
+2020-10-27 01:32:28.442 CST [23220] FATAL:  terminating connection due to administrator command
+2020-10-27 01:32:28.443 CST [20919] LOG:  background worker "logical replication launcher" (PID 20926) exited with exit code 1
+2020-10-27 01:32:28.445 CST [20921] LOG:  shutting down
+2020-10-27 01:32:28.481 CST [20919] LOG:  database system is shut down
