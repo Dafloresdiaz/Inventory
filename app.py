@@ -1,8 +1,9 @@
-import psycopg2 as database
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect, url_for
+from addStore import addNewStore
 import sys
 
 app = Flask(__name__)
+app.secret_key = "inventario"
 app.debug = True
 
 #The methods in a list to not repeat the same code.
@@ -16,7 +17,21 @@ def homePageView():
 
 @app.route("/createNewStore", methods=allmethods)
 def createNewStoreView():
-    return render_template("addStore.html")
+    error = None
+    if request.method == 'POST':
+        if request.form["insertStore"] == "insertStore":
+            storeName = request.form["storeName"]
+            if addNewStore(storeName):
+                flash("Store correctly inserted", category="info")
+                return redirect(url_for('createNewStoreView'))
+            else:
+                if not storeName:
+                    error = "The name of the Store is empty"
+                else:
+                    error = "The Store is already in the database"
+                return render_template("addStore.html", error=error)
+    else:
+        return render_template("addStore.html")
 
 @app.route("/createNewInventory", methods=allmethods)
 def createNewInventoryView():
@@ -34,23 +49,7 @@ def deleteAProduct():
 def stockProducts():
     return render_template("stockProducts.html")
 
-#Function to connect the app to the database, the data base is in postgresql.
-#Info:
-#Database = danielcompany
-#user     = localhost
-#Password = ' ', this is because the database does not have a password, this is a lack of security
-#Host     = localhost or 127.0.0.1
-#If the connection fail, the code prevent this connection with a exception.
-def connectionToDatabase():
-    try:
-        conn = database.connect(database="danielcompany", user="danielflores", password="pruebatecnica", host="localhost", port = "5433")
-        cursor = conn.cursor()
-        cursor.execute("select version()")
-        data = cursor.fetchone()
-        print("Conexion bien", file = sys.stderr)
-        conn.close()
-    except (Exception, database.DatabaseError) as error:
-        print(error)
 
-connectionToDatabase()
+
+
 

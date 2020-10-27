@@ -31,12 +31,29 @@
 
     <main role="main" class="container">
         <p></p>
-        <form>
+        {% if error %}
+          <div class="alert alert-danger" role="alert">
+            <strong>Oops!!: Something went wrong</strong>
+            <li>{{error}}</li>
+          </div>
+        {% else %}
+          {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+              {% for message in messages %}
+                  <div class="alert alert-success" role="alert">
+                    <strong>Yey! The new store is now in the database</strong>
+                    <li>{{ message }}</li>  
+                  </div>
+              {% endfor %}  
+            {% endif %}  
+          {% endwith %}  
+        {% endif %}
+        <form method="POST">
             <div class="form-row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Name of The Store">
+                <input name="storeName" type="text" class="form-control" placeholder="Name of The Store">
               </div>
-              <button type="button" class="btn btn-outline-success">Success</button>
+              <button name="insertStore" value="insertStore" type="submit" class="btn btn-outline-success">Success</button>
             </div>
         </form>
     

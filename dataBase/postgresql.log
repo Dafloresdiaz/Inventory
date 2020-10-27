@@ -68,3 +68,37 @@
 2020-10-27 09:03:44.744 CST [41521] STATEMENT:  CREATE TABLE INVENTORIES(ID SERIAL PRIMARY KEY NOT NULL, NAME TEXT NOT NULL, FOREIGN KEY(STORE_ID) REFERENCES STORES(STORE_ID));
 2020-10-27 09:08:13.110 CST [43322] ERROR:  column "store_id" referenced in foreign key constraint does not exist
 2020-10-27 09:08:13.110 CST [43322] STATEMENT:  CREATE TABLE INVENTORIES(INVENTORY_ID SERIAL PRIMARY KEY NOT NULL, NAME TEXT NOT NULL, FOREIGN KEY(STORE_ID) REFERENCES STORES(STORE_ID) );
+2020-10-27 11:15:15.518 CST [51933] LOG:  unexpected EOF on client connection with an open transaction
+2020-10-27 11:18:55.327 CST [51997] LOG:  unexpected EOF on client connection with an open transaction
+2020-10-27 11:22:00.440 CST [52182] LOG:  unexpected EOF on client connection with an open transaction
+2020-10-27 11:30:59.471 CST [43322] ERROR:  syntax error at or near "SELECT" at character 43
+2020-10-27 11:30:59.471 CST [43322] STATEMENT:  SELECT NAME FROM STORES WHERE NAME="Sams"
+	SELECT NAME FROM STORES WHERE NAME="Sams";
+2020-10-27 11:31:31.116 CST [43322] ERROR:  column "Sams" does not exist at character 36
+2020-10-27 11:31:31.116 CST [43322] HINT:  Perhaps you meant to reference the column "stores.name".
+2020-10-27 11:31:31.116 CST [43322] STATEMENT:  SELECT NAME FROM STORES WHERE NAME="Sams";
+2020-10-27 11:31:47.460 CST [43322] ERROR:  column "Sams" does not exist at character 43
+2020-10-27 11:31:47.460 CST [43322] HINT:  Perhaps you meant to reference the column "stores.name".
+2020-10-27 11:31:47.460 CST [43322] STATEMENT:  SELECT NAME FROM STORES WHERE STORES.NAME="Sams";
+2020-10-27 11:33:27.732 CST [43322] ERROR:  column "Sams" does not exist at character 40
+2020-10-27 11:33:27.732 CST [43322] HINT:  Perhaps you meant to reference the column "stores.name".
+2020-10-27 11:33:27.732 CST [43322] STATEMENT:  SELECT * FROM STORES WHERE STORES.NAME="Sams";
+2020-10-27 11:33:34.774 CST [43322] ERROR:  column "Sams" does not exist at character 33
+2020-10-27 11:33:34.774 CST [43322] HINT:  Perhaps you meant to reference the column "stores.name".
+2020-10-27 11:33:34.774 CST [43322] STATEMENT:  SELECT * FROM STORES WHERE NAME="Sams";
+2020-10-27 11:34:05.666 CST [43322] ERROR:  column "Sams" does not exist at character 35
+2020-10-27 11:34:05.666 CST [43322] HINT:  Perhaps you meant to reference the column "stores.name".
+2020-10-27 11:34:05.666 CST [43322] STATEMENT:  SELECT * FROM STORES WHERE name = "Sams";
+2020-10-27 11:48:40.738 CST [43322] ERROR:  syntax error at or near "ASD" at character 34
+2020-10-27 11:48:40.738 CST [43322] STATEMENT:  TRUNCATE stores RESTART IDENTITY
+	ASD
+	;
+2020-10-27 11:49:03.361 CST [43322] ERROR:  cannot truncate a table referenced in a foreign key constraint
+2020-10-27 11:49:03.361 CST [43322] DETAIL:  Table "inventories" references "stores".
+2020-10-27 11:49:03.361 CST [43322] HINT:  Truncate table "inventories" at the same time, or use TRUNCATE ... CASCADE.
+2020-10-27 11:49:03.361 CST [43322] STATEMENT:  TRUNCATE STORES RESTART IDENTITY;
+2020-10-27 12:20:49.701 CST [55999] ERROR:  column "id" does not exist at character 8
+2020-10-27 12:20:49.701 CST [55999] STATEMENT:  SELECT ID FROM STORES WHERE NAME='Sams'
+2020-10-27 12:21:15.074 CST [43322] ERROR:  column "stores_id" does not exist at character 8
+2020-10-27 12:21:15.074 CST [43322] HINT:  Perhaps you meant to reference the column "stores.store_id".
+2020-10-27 12:21:15.074 CST [43322] STATEMENT:  SELECT STORES_ID  FROM STORES WHERE NAME = 'Sams';
