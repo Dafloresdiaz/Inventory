@@ -31,17 +31,36 @@
 
     <main role="main" class="container">
         <p></p>
-        <form>
+        {% if error %}
+          <div class="alert alert-danger" role="alert">
+            <strong>Oops!!: Something went wrong</strong>
+            <li>{{error}}</li>
+          </div>
+        {% else %}
+          {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+              {% for message in messages %}
+                  <div class="alert alert-success" role="alert">
+                    <strong>Yey! The new inventory is now in the database</strong>
+                    <li>{{ message }}</li>  
+                  </div>
+              {% endfor %}  
+            {% endif %}  
+          {% endwith %}  
+        {% endif %}        
+        <form method="POST" >
             <div class="form-row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Name of the Inventory">
+                <input name="inventoryName" type="text" class="form-control" placeholder="Name of the Inventory">
               </div>
               <div class="col">
-                <select id="disabledSelect" class="form-control">
-                  <option>Stores...</option>
+                <select name="inventorySelection" id="disabledSelect" class="form-control">
+                  {% for s in storeList %}
+                    <option value="{{s}}">{{s}}</option>
+                  {% endfor %}
                 </select>
               </div>
-              <button type="button" class="btn btn-outline-success">Success</button>
+              <button name="insertInventory" value="insertInventory" type="submit" class="btn btn-outline-success">Success</button>
             </div>
         </form>
     

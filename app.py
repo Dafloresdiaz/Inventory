@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 from addStore import addNewStore
+from addInventory import addNewInventory
+from addInventory import createListStores
 import sys
 
 app = Flask(__name__)
@@ -35,7 +37,26 @@ def createNewStoreView():
 
 @app.route("/createNewInventory", methods=allmethods)
 def createNewInventoryView():
-    return render_template("addInventory.html")
+    listStores = createListStores()
+    error = None
+    if request.method == 'POST':
+        if request.form["insertInventory"] == "insertInventory":
+            inventoryName = request.form["inventoryName"]
+            store = request.form["inventorySelection"]
+            if addNewInventory(inventoryName, store):
+                flash("Inventory correctly inserted")
+                return redirect(url_for("createNewInventoryView",storeList = listStores))
+            else:
+                if not inventoryName:
+                    error = "The name of the inventory is empty"
+                elif not store:
+                    error = "The selection of the store is empty"
+                else:
+                    error = "The inventory is already created and related with that store"
+                return render_template("addInventory.html",error=error,storeList = listStores)
+
+    else:
+        return render_template("addInventory.html", storeList = listStores)
 
 @app.route("/addNewProductToAInventory", methods=allmethods)
 def createNewProductView():
