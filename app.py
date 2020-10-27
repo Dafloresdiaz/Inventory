@@ -43,7 +43,7 @@ def stockProducts():
 #If the connection fail, the code prevent this connection with a exception.
 def connectionToDatabase():
     try:
-        conn = database.connect(database="danielcompany", user="localhost", password=' ', host="localhost")
+        conn = database.connect(database="danielcompany", user="danielflores", password="pruebatecnica", host="localhost", port = "5433")
         cursor = conn.cursor()
         cursor.execute("select version()")
         data = cursor.fetchone()

@@ -24,3 +24,47 @@
 2020-10-27 01:32:28.443 CST [20919] LOG:  background worker "logical replication launcher" (PID 20926) exited with exit code 1
 2020-10-27 01:32:28.445 CST [20921] LOG:  shutting down
 2020-10-27 01:32:28.481 CST [20919] LOG:  database system is shut down
+2020-10-27 07:26:22.376 CST [39178] FATAL:  data directory "/Users/danielflores/Documents/Prueba_Tecnica/Inventario/dataBase" has invalid permissions
+2020-10-27 07:26:22.376 CST [39178] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).
+2020-10-27 07:30:01.546 CST [39362] FATAL:  data directory "/Users/danielflores/Documents/Prueba_Tecnica/Inventario/dataBase" has invalid permissions
+2020-10-27 07:30:01.546 CST [39362] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).
+2020-10-27 07:30:14.959 CST [39371] FATAL:  data directory "/Users/danielflores/Documents/Prueba_Tecnica/Inventario/dataBase" has invalid permissions
+2020-10-27 07:30:14.959 CST [39371] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).
+2020-10-27 07:30:22.718 CST [39378] FATAL:  data directory "/Users/danielflores/Documents/Prueba_Tecnica/Inventario/dataBase" has invalid permissions
+2020-10-27 07:30:22.718 CST [39378] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).
+2020-10-27 07:31:21.054 CST [39415] FATAL:  data directory "/Users/danielflores/Documents/Prueba_Tecnica/Inventario/dataBase" has invalid permissions
+2020-10-27 07:31:21.054 CST [39415] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).
+2020-10-27 07:42:47.543 CST [39865] FATAL:  data directory "/Users/danielflores/Documents/Prueba_Tecnica/Inventario/dataBase" has invalid permissions
+2020-10-27 07:42:47.543 CST [39865] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).
+2020-10-27 07:49:55.329 CST [40156] LOG:  starting PostgreSQL 13.0 on x86_64-apple-darwin19.4.0, compiled by Apple clang version 11.0.0 (clang-1100.0.33.8), 64-bit
+2020-10-27 07:49:55.332 CST [40156] LOG:  listening on IPv6 address "::1", port 5433
+2020-10-27 07:49:55.332 CST [40156] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2020-10-27 07:49:55.333 CST [40156] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5433"
+2020-10-27 07:49:55.340 CST [40157] LOG:  database system was shut down at 2020-10-27 01:32:28 CST
+2020-10-27 07:49:55.349 CST [40156] LOG:  database system is ready to accept connections
+2020-10-27 08:24:39.468 CST [40156] LOG:  received fast shutdown request
+2020-10-27 08:24:39.469 CST [40156] LOG:  aborting any active transactions
+2020-10-27 08:24:39.470 CST [41052] FATAL:  terminating connection due to administrator command
+2020-10-27 08:24:39.470 CST [41268] FATAL:  terminating connection due to administrator command
+2020-10-27 08:24:39.474 CST [40156] LOG:  background worker "logical replication launcher" (PID 40163) exited with exit code 1
+2020-10-27 08:24:39.474 CST [40158] LOG:  shutting down
+2020-10-27 08:24:39.493 CST [40156] LOG:  database system is shut down
+2020-10-27 08:25:00.211 CST [41444] FATAL:  data directory "/Users/danielflores/Documents/Prueba_Tecnica/Inventario/dataBase" has invalid permissions
+2020-10-27 08:25:00.211 CST [41444] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).
+2020-10-27 08:26:33.657 CST [41508] LOG:  starting PostgreSQL 13.0 on x86_64-apple-darwin19.4.0, compiled by Apple clang version 11.0.0 (clang-1100.0.33.8), 64-bit
+2020-10-27 08:26:33.659 CST [41508] LOG:  listening on IPv6 address "::1", port 5433
+2020-10-27 08:26:33.659 CST [41508] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2020-10-27 08:26:33.660 CST [41508] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5433"
+2020-10-27 08:26:33.666 CST [41509] LOG:  database system was shut down at 2020-10-27 08:24:39 CST
+2020-10-27 08:26:33.673 CST [41508] LOG:  database system is ready to accept connections
+2020-10-27 08:29:03.765 CST [41625] FATAL:  role "danielFlores" does not exist
+2020-10-27 08:44:54.628 CST [41521] ERROR:  syntax error at or near "/" at character 1
+2020-10-27 08:44:54.628 CST [41521] STATEMENT:  /help
+	CREATE TABLE STORES(
+	ID SERIAL PRIMARY KEY NOT NULL, NAME TEXT NOT NULL);
+2020-10-27 09:02:18.756 CST [41521] ERROR:  column "store_id" referenced in foreign key constraint does not exist
+2020-10-27 09:02:18.756 CST [41521] STATEMENT:  CREATE TABLE INVENTORIES(ID SERIAL PRIMARY KEY NOT NULL, NAME TEXT NOT NULL, FOREIGN KEY(STORE_ID) REFERENCES STORES(ID));
+2020-10-27 09:03:44.744 CST [41521] ERROR:  column "store_id" referenced in foreign key constraint does not exist
+2020-10-27 09:03:44.744 CST [41521] STATEMENT:  CREATE TABLE INVENTORIES(ID SERIAL PRIMARY KEY NOT NULL, NAME TEXT NOT NULL, FOREIGN KEY(STORE_ID) REFERENCES STORES(STORE_ID));
+2020-10-27 09:08:13.110 CST [43322] ERROR:  column "store_id" referenced in foreign key constraint does not exist
+2020-10-27 09:08:13.110 CST [43322] STATEMENT:  CREATE TABLE INVENTORIES(INVENTORY_ID SERIAL PRIMARY KEY NOT NULL, NAME TEXT NOT NULL, FOREIGN KEY(STORE_ID) REFERENCES STORES(STORE_ID) );
