@@ -1,0 +1,19 @@
+2020-10-26 21:41:17.908 CST [20919] LOG:  starting PostgreSQL 13.0 on x86_64-apple-darwin19.4.0, compiled by Apple clang version 11.0.0 (clang-1100.0.33.8), 64-bit
+2020-10-26 21:41:17.910 CST [20919] LOG:  listening on IPv6 address "::1", port 5433
+2020-10-26 21:41:17.910 CST [20919] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2020-10-26 21:41:17.911 CST [20919] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5433"
+2020-10-26 21:41:17.915 CST [20920] LOG:  database system was shut down at 2020-10-26 21:41:17 CST
+2020-10-26 21:41:17.919 CST [20919] LOG:  database system is ready to accept connections
+2020-10-26 21:57:19.619 CST [21240] LOG:  invalid length of startup packet
+2020-10-26 21:57:19.622 CST [21241] LOG:  invalid length of startup packet
+2020-10-26 21:57:19.630 CST [21242] LOG:  invalid length of startup packet
+2020-10-26 21:57:42.493 CST [21244] LOG:  invalid length of startup packet
+2020-10-26 21:57:42.498 CST [21245] LOG:  invalid length of startup packet
+2020-10-26 21:57:42.504 CST [21246] LOG:  invalid length of startup packet
+2020-10-26 21:58:30.002 CST [21257] LOG:  invalid length of startup packet
+2020-10-26 21:58:30.004 CST [21258] LOG:  invalid length of startup packet
+2020-10-26 21:58:30.012 CST [21259] LOG:  invalid length of startup packet
+2020-10-26 22:04:41.307 CST [21267] ERROR:  syntax error at or near "." at character 30
+2020-10-26 22:04:41.307 CST [21267] STATEMENT:  CREATE DATABASE danielCompany.db;
+2020-10-26 22:05:43.983 CST [21407] FATAL:  role "localHost" does not exist
+2020-10-26 22:13:02.322 CST [21483] FATAL:  database "danielCompany" does not exist
