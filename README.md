@@ -1,4 +1,4 @@
-# Inventario
+# Inventory
 This is a very small inventory system, with a database to handle and saving the information.
 
 ## Functionality
