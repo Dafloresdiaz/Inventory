@@ -1,5 +1,9 @@
 # Inventario
 This is a very small inventory system, with a database to handle and saving the information.
+
+## Functionality
+- The user can add a new store, with the correct info; The system have the warnings to show if something went wrong.
+- The user can add a product, with the correct innfo; Also the system have wwarnigns to show if somethng went wirng with the insertion
 *There are several things to improve or add to the current functionality*
 
 ## Technologies used:
