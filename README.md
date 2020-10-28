@@ -20,3 +20,13 @@ Tables:
 - Products: Basic info about the product like, Name, Type of the prodcut, in which Store is.
 ![](images/dataBaseDesign.png)
 
+## JSON Response
+If you want you can obtain your info by doing a GET request(I recommend Postman :rocket: ):
+- Filters by: city, store, prod, type
+Examples:
+- http://127.0.0.1:5000/showData?city=Queretaro
+- http://127.0.0.1:5000/showData?store=Gameplanet
+- http://127.0.0.1:5000/showData?prod=Airmx-90
+- http://127.0.0.1:5000/showData?type=VideoJuegos
+- You can combibne filters like: http://127.0.0.1:5000/showData?store=Mini+Walmart&city=Queretaro
+
