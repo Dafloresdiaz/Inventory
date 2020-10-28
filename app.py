@@ -2,7 +2,8 @@ from flask import Flask, render_template, request, flash, redirect, url_for, jso
 from addStore import addNewStore
 from addProduct import addNewProduct
 from addProduct import createListStores
-from obtainInfo import createListResults 
+from obtainInfo import createListResults
+from obtainInfo import filterListResults
 import sys
 
 app = Flask(__name__)
@@ -70,9 +71,20 @@ def createNewProductView():
     else:
         return render_template("addProduct.html",storesList = listStores)
 
-@app.route("/stockForAProduct",methods=allmethods)
+@app.route("/showData",methods=allmethods)
 def stockProducts():
-    results = createListResults()
+    param = request.args
+
+    storeName = param.get('store')
+    productName = param.get('prod')
+    typeProduct = param.get('type')
+    city = param.get('city')
+
+    if not (storeName or productName or typeProduct or city):
+        results = createListResults()
+    else:
+        results = filterListResults(storeName, productName, typeProduct, city)
+
     return jsonify(results)
 
 
