@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
 from addStore import addNewStore
 from addProduct import addNewProduct
 from addProduct import createListStores
@@ -69,11 +69,7 @@ def createNewProductView():
     else:
         return render_template("addProduct.html",storesList = listStores)
 
-@app.route("/deleteProduct", methods=allmethods)
-def deleteAProduct():
-    return render_template("deleteProduct.html")
-
-@app.route("/stockForAProduct",methods=getMethod)
+@app.route("/stockForAProduct",methods=allmethods)
 def stockProducts():
     return render_template("stockProducts.html")
 
