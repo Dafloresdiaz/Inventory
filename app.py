@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for, jso
 from addStore import addNewStore
 from addProduct import addNewProduct
 from addProduct import createListStores
+from obtainInfo import createListResults 
 import sys
 
 app = Flask(__name__)
@@ -71,7 +72,8 @@ def createNewProductView():
 
 @app.route("/stockForAProduct",methods=allmethods)
 def stockProducts():
-    return render_template("stockProducts.html")
+    results = createListResults()
+    return jsonify(results)
 
 
 
