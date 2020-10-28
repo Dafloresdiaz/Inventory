@@ -13,4 +13,5 @@ This is the current design of the database, very simple, a relation 1 to N
 Tables:
 - Stores: Basic info about the store like, Name, Phone, Adress, City.
 - Products: Basic info about the product like, Name, Type of the prodcut, in which Store is.
+![](images/dataBaseDesign.png)
 
