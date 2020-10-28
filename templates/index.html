@@ -16,6 +16,7 @@
       </nav>
 
     <main role="main" class="container">
+      <p></p>
       <div class="card">
         <div class="card-header">
           Adm. Store and Products 
@@ -24,8 +25,23 @@
           <div class="starter-template">
             <p><a href="http://127.0.0.1:5000/createNewStore">Create a new Store</a></p>
             <p><a href="http://127.0.0.1:5000/addNewProduct" >Add a new product to a store</a></p>
-            <p><a href="http://127.0.0.1:5000/showData">Show data (JSON)</p>
-             </div>
+            <p><a href="http://127.0.0.1:5000/showData">Show data (JSON)</a></p>
+              <div class="card" style="width: rem;">
+                <div class="card-body">
+                  <h5 class="card-title">JSON Results</h5>
+                  <p class="card-text">You can create queries and the result will be in JSON.</p>
+                  <p class="card-text">Filters by: city, store, prod, type</p>
+                  <div class="list-group">
+                    <a class="list-group-item list-group-item-action active">Examples:</a>
+                    <a href="http://127.0.0.1:5000/showData?city=Queretaro" class="list-group-item list-group-item-action">Filter by city: http://127.0.0.1:5000/showData?city=Queretaro</a>
+                    <a href="http://127.0.0.1:5000/showData?store=Gameplanet" class="list-group-item list-group-item-action">Filter by store: http://127.0.0.1:5000/showData?store=Gameplanet</a>
+                    <a href="http://127.0.0.1:5000/showData?prod=Airmx-90" class="list-group-item list-group-item-action">Filter by prod: http://127.0.0.1:5000/showData?prod=Airmx-90</a>
+                    <a href="http://127.0.0.1:5000/showData?type=VideoJuegos" class="list-group-item list-group-item-action">Filter by type: http://127.0.0.1:5000/showData?type=VideoJuegos</a>
+                    <a href="http://127.0.0.1:5000/showData?store=Mini+Walmart&city=Queretaro" class="list-group-item list-group-item-action">Filter by more fields: http://127.0.0.1:5000/showData?store=Mini+Walmart&city=Queretaro </a>
+                  </div>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
     </main>
