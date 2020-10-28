@@ -11,6 +11,7 @@ This is a very small inventory system, with a database to handle and saving the 
 - Postgresql: The creation fo the database.
 - Python: The principal programming language
 - HTML y Boostrap: This for the creation and the style of the pages.
+> This is my first time using postgresql and flask to create an app
 
 ## Design of the database
 This is the current design of the database, very simple, a relation 1 to N
