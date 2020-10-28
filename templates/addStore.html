@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="#">Add new store</a>
+        <a class="navbar-brand" href="http://127.0.0.1:5000/">API Sotre and Inventory Control</a> 
         <ul class="nav">
             <li class="nav-item">
               <a class="nav-link" href="http://127.0.0.1:5000/createNewInventory">Associate/Create an Inventory</a>
@@ -48,15 +48,42 @@
             {% endif %}  
           {% endwith %}  
         {% endif %}
-        <form method="POST">
-            <div class="form-row">
-              <div class="col">
-                <input name="storeName" type="text" class="form-control" placeholder="Name of The Store">
+        <div class="card">
+          <div class="card-header">
+            Add Store
+          </div>
+          <div class="card-body">
+            <form method="POST" >
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <div class="col">
+                    <input name="storeName" type="text" class="form-control" placeholder="Name of The Store">
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <div class="col">
+                    <input name="Adress" type="text" class="form-control" placeholder="Adress">
+                  </div>
+                </div>
               </div>
-              <button name="insertStore" value="insertStore" type="submit" class="btn btn-outline-success">Success</button>
-            </div>
-        </form>
-    
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <div class="col">
+                    <input name="City" type="text" class="form-control" placeholder="City">
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <div class="col">
+                    <input name="phoneNumber" type="text" class="form-control" placeholder="Phone Number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto my-1">
+                <button name="insertStore" value="insertStore" type="submit" class="btn btn-outline-success">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
     </main>
 
     <!-- Optional JavaScript; choose one of the two! -->

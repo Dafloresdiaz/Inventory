@@ -12,13 +12,10 @@
   </head>
   <body>
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="#">Add/Create a Product</a>
+        <a class="navbar-brand" href="http://127.0.0.1:5000/">API Store and Inventory Control</a>
         <ul class="nav">
             <li class="nav-item">
               <a class="nav-link" href="http://127.0.0.1:5000/createNewStore">Add New Store</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1:5000/createNewInventory">Associate/Create an Inventory</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1:5000/deleteProduct">Delete A Product</a>
@@ -31,20 +28,60 @@
 
     <main role="main" class="container">
         <p></p>
-        <form>
-            <div class="form-row">
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Name of the Product">
-              </div>
-              <div class="col">
-                <select id="disabledSelect" class="form-control">
-                  <option>Inventories...</option>
-                </select>
-              </div>
-              <button type="button" class="btn btn-outline-success">Success</button>
-            </div>
-        </form>
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+          <strong>Oops!!: Something went wrong</strong>
+          <li>{{error}}</li>
+        </div>
+      {% else %}
+        {% with messages = get_flashed_messages() %}  
+          {% if messages %}  
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>Yey!</strong> The new store is now in the database
+                  <li>{{ message }}</li>  
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            {% endfor %}  
+          {% endif %}  
+        {% endwith %}  
+      {% endif %}
+        <div class="card">
+          <div class="card-header">
+            Add a new product
+          </div>
+          <div class="card-body">
+            <form method="POST" >
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <div class="col">
+                    <input name="productName" type="text" class="form-control" placeholder="Name of the product">
+                  </div>
+                </div>
+                <div class="form-group col-md-4">
+                  <div class="col">
+                    <input name="typeProduct" type="text" class="form-control" placeholder="Type of the Product i.e Videojuegos,Tenis,Deportes">
+                  </div>
+                </div>
+                <div class="form-group col-md-4">
+                  <div class="col">
+                    <select name="storeSelection" id="disabledSelect" class="form-control">
+                      {% for s in storesList %}
+                        <option value="{{s}}">{{s}} </option>
+                      {% endfor %}
+                    </select>
+                  </div>
     
+                </div>
+              </div>
+              <div class="col-auto my-1">
+                <button name="insertProduct" value="insertProduct" type="submit" class="btn btn-outline-success">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
     </main>
 
     <!-- Optional JavaScript; choose one of the two! -->
