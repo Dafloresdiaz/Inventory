@@ -30,3 +30,5 @@ Examples:
 - http://127.0.0.1:5000/showData?type=VideoJuegos
 - You can combibne filters like: http://127.0.0.1:5000/showData?store=Mini+Walmart&city=Queretaro
 
+![](images/postman.png)
+![](images/browser.png)
